@@ -14,8 +14,10 @@ export const Footer: FunctionComponent = () => {
           © {config.blog.copyright} {new Date().getFullYear()}
         </div>
         <div className="text-xs text-muted-foreground hidden lg:block">
+          <span>Blog powered by Aaditya Corporation:</span>
           <Link
             href={`https://wisp.blog/?utm_source=next-js-template&utm_medium=web&utm_campaign=${config.baseUrl}`}
+            className="hover:underline ml-1"
           >
             Blog powered by wisp
           </Link>
@@ -29,9 +31,11 @@ export const Footer: FunctionComponent = () => {
           <DarkModeToggle />
         </div>
       </div>
-      <div className="text-xs text-muted-foreground lg:hidden">
+      <div className="text-xs text-muted-foreground lg:hidden mt-2">
+        <span>Blog powered by Aaditya Corporation:</span>
         <Link
           href={`https://wisp.blog/?utm_source=next-js-template&utm_medium=web&utm_campaign=${config.baseUrl}`}
+          className="hover:underline ml-1"
         >
           Blog powered by wisp
         </Link>

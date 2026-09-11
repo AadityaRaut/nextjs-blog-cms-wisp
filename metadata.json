@@ -1,0 +1,6 @@
+{
+  "name": "Aaditya Travels",
+  "description": "Travel blog documenting adventures, guides, and stories from around the world by Aaditya.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,11 +1,21 @@
 const buildConfig = () => {
-  const blogId = process.env.NEXT_PUBLIC_BLOG_ID;
-  if (!blogId) throw new Error("NEXT_PUBLIC_BLOG_ID is missing");
-  const name = process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME || "Travel.";
-  const copyright = process.env.NEXT_PUBLIC_BLOG_COPYRIGHT || "Samantha";
+  const blogId = process.env.NEXT_PUBLIC_BLOG_ID || "demo-travel-blog";
+  const envName = process.env.NEXT_PUBLIC_BLOG_DISPLAY_NAME;
+  const name = !envName || envName === "Travel." ? "Aaditya Travels." : envName;
+  const envCopyright = process.env.NEXT_PUBLIC_BLOG_COPYRIGHT;
+  const copyright =
+    !envCopyright || envCopyright === "Samantha" ? "Aaditya" : envCopyright;
+  const envTitle = process.env.NEXT_DEFAULT_METADATA_DEFAULT_TITLE;
   const defaultTitle =
-    process.env.NEXT_DEFAULT_METADATA_DEFAULT_TITLE || "Travel with Samantha";
-  const defaultDescription = process.env.NEXT_PUBLIC_BLOG_DESCRIPTION || "Blog about travel and lifestyle.";
+    !envTitle || envTitle === "Travel with Samantha"
+      ? "Aaditya Travels"
+      : envTitle;
+  const defaultDescription =
+    process.env.NEXT_PUBLIC_BLOG_DESCRIPTION &&
+    process.env.NEXT_PUBLIC_BLOG_DESCRIPTION !==
+      "Blog about travel and lifestyle."
+      ? process.env.NEXT_PUBLIC_BLOG_DESCRIPTION
+      : "Adventures, guides, and travel stories from around the world by Aaditya.";
 
   return {
     baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
